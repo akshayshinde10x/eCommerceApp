@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body class="container">
+<h1 class="text-center">Please enter your details</h1>
+<form method="POST" action="{% url 'placeOrder'%}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Mobile Number</label>
+        <input type="number" class="form-control" name="mobile">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Degree</label>
+        <input type="text" class="form-control" name="degree">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Graduation Year</label>
+        <input type="number" class="form-control" name="gradYear">
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Place order</button>
+    </div>
+</form>
+</body>
+</html>
